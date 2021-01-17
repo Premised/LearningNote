@@ -7,5 +7,15 @@
 ## wsgi（web service gateway Interface）web 服务器网关接口。
   - Django：wsgiref
   - Flask：werkzeug
-  
+
+## Flask
+   - 装饰器实现
+       - 位置
+       - URL起别名(不能重复)
+   - 类似django中间件的东西：before_request装饰器
+   
+## 
+    - threading local  
+    - funtools.wraps
+    - funtions.partial 
   
