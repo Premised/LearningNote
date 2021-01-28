@@ -31,10 +31,23 @@ set profiling=1;
 通过 show profile [-- 选项 all、cpu...] for query id(上述show profiles 中对应的id，即查看对应的查询语句的耗时)；注意;sending data：MySQL向mysql发送请求开始到数据返回客户端的整个时间的耗费；
 
 
-## 通过trace 分析优化器执行计划
+## 通过trace 分析优化器执行计划 [OPtimizer]
 **MySQL5.6提供了对SQL的跟踪trace，通过trace文件能够进一步了解为什么优化器选择A计划，而不是选择B计划**
-打开trace，设置格式为JSON，并设置trace最大能够使用的内存大小
+打开trace，设置格式为JSON，并设置trace最大能够使用的内存大小,避免解析过程中因为默认内存过小而不能够完整展示；
+```mysql
+set optimizer_trace='enabled=on',end_markers_in_json=on;
 
+set optimizer_trace_max_mem_size=1000000;
+```
+
+执行SQL语句：
+```mysql
+select * from tb_item where id<4;
+```
+最后，检查information_schema.optimizer_trace就可以知道MySQL是如何执行的：
+```mysql
+select * from information_schema.optimizer_trace\G;
+```
 
 
 
