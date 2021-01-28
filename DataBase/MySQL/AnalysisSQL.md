@@ -31,3 +31,21 @@ set profiling=1;
 通过 show profile [-- 选项 all、cpu...] for query id(上述show profiles 中对应的id，即查看对应的查询语句的耗时)；注意;sending data：MySQL向mysql发送请求开始到数据返回客户端的整个时间的耗费；
 
 
+## 通过trace 分析优化器执行计划
+**MySQL5.6提供了对SQL的跟踪trace，通过trace文件能够进一步了解为什么优化器选择A计划，而不是选择B计划**
+打开trace，设置格式为JSON，并设置trace最大能够使用的内存大小
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
