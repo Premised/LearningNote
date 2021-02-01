@@ -18,4 +18,14 @@ explain
 
 - 尽量使用覆盖索引，避免使用select * 
 
- 
+ ```shell
+TIP:
+    using index:使用覆盖索引的时候会出现
+
+    using where：在查找使用索引的情况下，需要回表去查询所需的数据
+
+    using index condition：查找使用了索引，但是需要回表查询数据(还需要找到的数据字段)
+
+    using index；using where ：查找使用了索引，但是需要的数据都在索引列中能找到，所以不需要回表查询数据  
+```
+
