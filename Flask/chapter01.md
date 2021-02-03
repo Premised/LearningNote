@@ -8,14 +8,18 @@
   - Django：wsgiref
   - Flask：werkzeug
 
-## Flask
+## Flask action
    - 装饰器实现
        - 位置
        - URL起别名(不能重复)
    - 类似django中间件的东西：before_request装饰器
    
-## 
+##  前置知识点
     - threading local  
     - funtools.wraps
     - funtions.partial 
+    
+    - 面向对象的封装和内置函数
+    
+## 上下文管理（※）
   
